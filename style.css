@@ -1,0 +1,338 @@
+/* *Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+CO+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tsukimi+Rounded&display=swap');
+
+
+/* *Css Reset */
+* {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          border: none;
+          outline: none;
+          list-style: none;
+        }
+
+
+body{
+          font-family: "Poppins", sans-serif;
+          background-color: #4158D0;
+background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+
+min-height: 100vh; /*ekran yüksekliğinin tamamını kaplaması için 100vh verdik*/
+
+}
+
+.add-box,header, .bottom,.settings,.menu li {
+  display: flex;
+  justify-content: space-between;
+        align-items: center;
+        text-align: center;
+
+}
+
+
+
+
+/* *Wrapper */
+.wrapper{
+          margin: 50px; /* Tüm kenarlardan 50px boşluk bırakır */
+          display: grid;
+          gap: 25px;    /*herbiri arasına boşluk verir*/
+          grid-template-columns: repeat(auto-fill,265px); 
+/* 29.daki kod, grid konteynerindeki sütunları otomatik olarak 265px genişliğinde olacak şekilde oluşturur ve ekran boyutuna göre uyumlu hale getirir.
+📌 repeat(auto-fill, 265px) Nasıl Çalışır?
+repeat(...) → Tekrarlayan sütunlar oluşturur.
+auto-fill → Sığabildiği kadar çok sütun ekler.
+265px → Her sütunun genişliği 265px olur.
+ */
+}
+
+.wrapper li {
+
+          background-color: white;
+          height: 250px;
+          padding: 15px 20px 20px;   /* bir elementin içeriği ile kenarlıkları arasındaki boşluktur. */
+          border-radius: 5px;   /* Tüm köşeleri 5px yuvarlatır */
+          box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+          /* box-shadow, bir elemente gölge eklemek için kullanılan CSS özelliğidir.
+          0 → X ekseni (yatay gölge): Gölgenin sağa veya sola kaymasını belirler. 0 olduğu için yatayda kayma yok.
+4px → Y ekseni (dikey gölge): Gölgenin aşağı kaymasını belirler. Burada 4 piksel aşağıda bir gölge var.
+8px → Blur (bulanıklık): Gölgenin ne kadar yayılacağını belirler. Daha büyük değer = daha yumuşak gölge.
+rgba(0,0,0,0.5) → Renk ve opaklık:
+0,0,0 → Siyah renk (RGB)
+0.5 → %50 opaklık (yarı saydam) */
+}
+
+.add-box{
+          /* display: flex;
+
+Elementi Flex Container (esnek konteyner) yapar.
+İçindeki öğeleri hizalamak için flex-direction, justify-content, align-items gibi özellikleri kullanabiliriz.
+flex-direction: column;
+
+Varsayılan olarak row (yatay) olan Flex yönünü sütun (dikey) hizaya çevirir.
+Yani öğeler üstten alta doğru sıralanır.
+justify-content: center;
+
+İçerikleri dikey eksende ortalar (çünkü flex-direction: column; olduğu için justify-content artık dikey çalışır). */
+         
+      
+          flex-direction: column;
+          justify-content: center;
+          
+          cursor: pointer;  /*CSS özelliği, bir elementin üzerine gelindiğinde (hover edildiğinde) imlecin el işareti (pointer) şeklinde görünmesini sağlar.*/
+}
+
+
+.add-box .icon{
+color: #C850C0;
+height: 78px;
+width: 78px;
+font-size: 40px;
+border: 2px dashed #C850C0 ;
+border-radius: 50%;
+display: grid;
+place-items: center;
+
+
+}
+
+.add-box p {
+          color: #C850C0;
+          margin-top: 40px;   /* add new note ile (+) simgesini biribirinden uzaklaştırıyor */
+          font-weight: 800;
+
+}
+
+
+.note{
+          
+justify-content: space-between;
+          display: flex;
+          flex-direction: column;
+          
+}
+
+
+.note .details {
+ 
+  max-height: 165px !important;
+  overflow-y: auto;       
+  /* overflow-y 📌 Ne İşe Yarar?
+İçerik taşarsa dikey kaydırma çubuğu ekler.
+İçerik taşmazsa kaydırma çubuğu göstermez (gerektiğinde otomatik ekler).
+Kullanıcı dostu bir kaydırma işlemi sağlar */
+}
+.note .details .title{
+font-size: 22px;
+font-weight: 500;
+}
+
+.note .details .description{
+  color:#575757;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.note .bottom{
+
+  padding-top: 10px;
+  border-top: 1px solid #ccc; /* Bu CSS özelliği, bir elementin üst tarafına (top) 1 piksel kalınlığında, düz (solid) ve gri renkte (#ccc) bir kenarlık ekler.*/
+}
+
+.note .details .title {
+
+  font-size: 22px;
+
+  font-weight: 500;
+
+}
+.note .bottom span{
+
+  color: #6d6d6d;
+  font-size: 14px;
+}
+
+
+.note .bottom .settings{
+  position: relative;
+}
+
+
+.note .bottom .settings i {
+  color: #6d6d6d;
+  font-size: 14px;
+  cursor: pointer;
+
+}
+/* Bu CSS kodu, .note adlı bir üst öğe içinde bulunan .bottom → .setting → .show → .menu adlı bir öğeyi ölçeklendirmek (büyütmek veya küçültmek) için kullanılır.
+
+scale: 1; → Öğenin orijinal boyutunda kalmasını sağlar. (1x büyüklük)
+Özellik genellikle transform: scale(1); şeklinde kullanılır. Ancak modern tarayıcılarda doğrudan scale özelliği de desteklenir. */
+.note .bottom .settings.show .menu{
+  scale: 1;
+}
+
+.note .bottom .menu {
+  /* Bu CSS özelliği, bir öğeyi normal akıştan çıkarır ve en yakın relative, absolute, fixed veya sticky konumlanmış üst öğeye göre konumlandırır. Eğer böyle bir üst öğe yoksa, body (tüm sayfa) baz alınır. */
+  position: absolute;
+  bottom: -10px;
+
+  right: -55px;
+
+  z-index: 1;
+
+  padding: 5px 0;
+
+  background-color: white;
+
+  border-radius: 4px;
+
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+
+  scale: 0;
+
+  transition: all 0.3s ease-in-out;
+  /* Bu CSS özelliği, bir öğenin tüm değişikliklerini (all) 0.5 saniye boyunca (0.5s) sabit bir hızda (linear) geçişli (animasyonlu) hale getirir. */
+          
+}
+
+.note .bottom .menu li:hover{
+background-color: #f5f5f5;
+
+
+}
+.note .bottom .menu li{
+  height: 25px;
+  font-size: 16px;
+  margin-bottom: 3px;
+  padding: 17px 15px;
+  cursor: pointer;
+  box-shadow: unset;
+  justify-content: flex-start;
+  /* Bu CSS özelliği, Flexbox veya Grid içindeki öğeleri ana eksenin başına hizalar.
+
+ */
+}
+
+.note .bottom .menu li i {
+  padding-right: 8px;
+}
+
+
+/* *Pop up */
+
+/*  ! Buradaki gibi bir elemana js den class eklenecekse bunun bitişik yazarsak ilgili elemana class eklenecektir.
+! Ama bunu ayrı yazarsak class adını bu elemanın altında bir eleman olarak algılayacaktır. */
+
+.popup-box,
+.popup {
+  opacity: 0;
+  pointer-events: none;
+}
+/* ! aşağıda çok önemli bir fark var
+! .popup-box.show  (<element class="popup-box show">) ile 
+! .popup-box .show (<element class="popup-box"> <element class="show">)      arasında büyük oranda fark vardır. */
+/**aşağıda show classı eklenip geri çıkarılıyor */
+.popup-box.show,
+.popup.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.popup-box{
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color:rgba(0,0,0,0.4)   ;
+  width: 100%;
+  height: 100%;
+}
+
+.popup{
+
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  max-width: 400px;
+  justify-content: center;
+}
+
+.popup .content {
+
+  background-color: white;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 15 rgba(0,0,0,0.1);
+}
+
+.popup .content header{
+
+  padding: 15px 25px;
+  border-bottom: 1px solid #ccc;
+}
+
+.popup .content header p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.popup .content header i {
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.popup .content form {
+  margin: 15px 25px 35px;
+  display: flex;
+  flex-direction: column;
+  gap:25px
+}
+
+.popup .content form .row {
+  margin-bottom: 20px;
+}
+
+.popup .content form .row label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+/** .popup .content form input,.popup .content form textarea{
+
+}   yukarıdakinin farklı bir gösterimi aşağıdadır  */
+
+.popup .content form :where(input,textarea){
+height: 50px;
+width: 100% !important  ;
+border-radius: 4px;
+border:1px solid #999;
+text-indent: 15px;
+
+}
+
+.popup .content form :where(input,textarea):focus {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.popup .content form .row textarea{
+/* yeniden boyutlama yapmamak için aşağıdakini kullandık  */
+  resize: none;   
+  height: 150px;
+  padding: 8px 0;
+}
+
+.popup .content form #submit-btn {
+  width: 100%;
+  height: 50px;
+  background-color: #c850c0;
+  color: white;
+  border-radius: 4px;
+  font-size: 17px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
