@@ -1,6 +1,6 @@
 
+<img src="images/download.gif" width="800 />
 
-![Preview](images/download.gif)
 
 
 
