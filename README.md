@@ -1,8 +1,8 @@
 
-<img src="images/download.gif" width="800 />
 
 
 
+![Preview](images/download.gif)
 
 Used Technologies And Libraries
 Html
